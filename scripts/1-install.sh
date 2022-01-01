@@ -47,6 +47,9 @@ ExecStart=/usr/local/bin/prometheus \
     --storage.tsdb.path /var/lib/prometheus/ \
     --web.console.templates=/etc/prometheus/consoles \
     --web.console.libraries=/etc/prometheus/console_libraries
+    --web.listen-address=0.0.0.0:9090
+Restart=always
+RestartSec=10s
 
 [Install]
 WantedBy=multi-user.target' > /etc/systemd/system/prometheus.service
